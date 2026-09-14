@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Mudras{% endblock %}
+{% block meta_desc %}Learn about yoga mudras and the five elements (Pancha Bhoota) used in Diva Dynamic Yoga classes —
+Gyan, Prana, Apana, Vayu, Shunya and Dhyana mudras.{% endblock %}
+
+{% block content %}
+
+<!-- ══ Page Hero ══════════════════════════════════════════════ -->
+<section class="page-hero" aria-label="Mudras page hero">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="pill pill--sage"
+      style="margin-bottom:1rem; background:rgba(255,255,255,.15); color:var(--sand-light); border:1px solid rgba(255,255,255,.2);">
+      Yogic Gestures</div>
+    <h1>Mudras &amp; The Five Elements</h1>
+    <p>A clear guide to key hand mudras and the five elemental principles used in yoga to improve focus, energy and
+      emotional balance.</p>
+  </div>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mudras.css') }}">
+</section>
+
+<!-- ══ What Are Mudras ════════════════════════════════════════ -->
+<section class="section" id="what-are-mudras">
+  <div class="container">
+
+    <div style="display:grid; grid-template-columns:1fr 440px; gap:4rem; align-items:center;" id="mudra-intro-grid">
+
+      <div class="reveal">
+        <div class="pill pill--sage" style="margin-bottom:1rem;">Introduction</div>
+        <h2>What Are Mudras?</h2>
+        <div class="divider"></div>
+        <p style="margin-top:1.2rem; font-size:1rem; line-height:1.85;">
+          Mudras are yogic hand gestures used to influence the flow of energy in the body.
+          Each finger represents one of the five elements — <strong>Space, Air, Fire, Water and Earth</strong>.
+        </p>
+        <p style="margin-top:1rem; font-size:1rem; line-height:1.85;">
+          When fingers touch or press in specific ways, these elements come into balance,
+          affecting focus, breath, mood and overall wellbeing. They are subtle yet profoundly effective
+          tools used throughout our classes.
+        </p>
+
+        <!-- Finger-element table -->
+        <div
+          style="margin-top:2rem; background:var(--cream-dark); border-radius:var(--radius-md); padding:1.5rem; border:1px solid rgba(91,138,122,.1);">
+          <h4
+            style="margin-bottom:1rem; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--sage-dark);">
+            Finger to Element Mapping</h4>
+          <div style="display:flex; flex-direction:column; gap:.6rem;">
+            {% for row in [('👍 Thumb', 'Fire'), ('☝️ Index', 'Air'), ('🖕 Middle', 'Space / Ether'), ('💍 Ring',
+            'Earth'), ('🤙 Little', 'Water')] %}
+            <div style="display:flex; align-items:center; gap:1rem; font-size:.88rem;">
+              <span style="min-width:110px; color:var(--forest); font-weight:500;">{{ row[0] }}</span>
+              <span style="flex:1; height:1px; background:rgba(91,138,122,.15);"></span>
+              <span style="color:var(--text-muted);">{{ row[1] }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1"
+        style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg);">
+        <img src="{{ url_for('static', filename='images/mudra_hands.png') }}"
+          alt="Yoga mudra hand gesture — Gyan Mudra with index finger touching thumb"
+          style="width:100%; height:400px; object-fit:cover;" loading="lazy" />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Mudra Cards ════════════════════════════════════════════ -->
+<section class="section section--alt" id="mudra-cards">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sage">Practice Guide</div>
+      <h2>Key Mudras We Use</h2>
+      <p>Six essential mudras incorporated across our classes — each targeting specific energy flows.</p>
+    </div>
+
+    <div class="mudra-grid">
+      {% for m in mudras %}
+      <div class="mudra-card reveal {% if not loop.first %}reveal-delay-{{ [loop.index0 % 3, 4] | min }}{% endif %}"
+        id="mudra-{{ m.name|lower|replace(' ', '-') }}">
+        <div class="mudra-emoji">{{ m.element_emoji }}</div>
+        <div class="mudra-name">{{ m.name }}</div>
+        <p class="mudra-gesture">{{ m.gesture }}</p>
+        <div class="mudra-element">🌀 Element: {{ m.element }}</div>
+        {% for b in m.benefits %}
+        <p class="mudra-benefit">✓ {{ b }}</p>
+        {% endfor %}
+        <p class="mudra-used">📍 Used in: {{ m.used_in }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Five Elements ══════════════════════════════════════════ -->
+<section class="section" id="five-elements">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sand">Pancha Bhoota</div>
+      <h2>The Five Elements</h2>
+      <p>Yoga understands the human system through five natural elements. Our classes integrate breath, posture and
+        mudras to harmonise all five.</p>
+    </div>
+
+    <div class="elements-grid">
+      {% for el in elements %}
+      <div class="element-card reveal {% if not loop.first %}reveal-delay-{{ [loop.index0, 4] | min }}{% endif %}"
+        id="element-{{ el.name|lower|replace(' ', '-')|replace('(', '')|replace(')', '') }}">
+        <div class="element-emoji">{{ el.emoji }}</div>
+        <div class="element-name">{{ el.name }}</div>
+        <div class="element-detail">
+          <em>{{ el.qualities }}</em>
+          <strong>Imbalance: {{ el.imbalance }}</strong>
+          <strong style="color:var(--sage-dark);">Balance: {{ el.balanced }}</strong>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ How We Use This in Classes ════════════════════════════ -->
+<section class="section section--forest" id="class-integration">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sage"
+        style="background:rgba(91,138,122,.25); color:var(--sand-light); border:1px solid rgba(91,138,122,.3);">
+        Integration</div>
+      <h2>How We Use This in Classes</h2>
+      <p style="color:rgba(237,231,220,.7);">Mudras are woven naturally into every session — not as an afterthought, but
+        as core tools.</p>
+    </div>
+
+    <div class="grid-2" style="gap:1.5rem; max-width:800px; margin-inline:auto;">
+
+      {% for item in [
+      ('🌅', 'Morning Sessions', 'Air and Fire balancing mudras for energy and alertness to begin the day.'),
+      ('🌆', 'Evening Sessions', 'Earth and Water mudras for grounding and deep relaxation.'),
+      ('💚', 'Therapy Yoga', 'Apana, Prana, and Vayu mudras chosen based on each student\'s individual needs.'),
+      ('🧘', 'Meditation Days', 'Gyan Mudra and Dhyana Mudra to improve concentration and inner stillness.'),
+      ] %}
+      <div class="reveal {% if not loop.first %}reveal-delay-{{ loop.index0 }}{% endif %}"
+        style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius-md); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+        <span style="font-size:1.8rem; flex-shrink:0;">{{ item[0] }}</span>
+        <div>
+          <h4 style="color:var(--sand-light); margin-bottom:.4rem;">{{ item[1] }}</h4>
+          <p style="font-size:.9rem; color:rgba(237,231,220,.65);">{{ item[2] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <div class="pill pill--sage" style="margin-bottom:1.2rem;">Experience It Live</div>
+      <h2 style="margin-bottom:1rem;">Ready to Explore Mudra Practice?</h2>
+      <p style="max-width:500px; margin-inline:auto; margin-bottom:2rem;">
+        Join a class and experience firsthand how mudras and breath work together to transform your energy, focus and
+        wellbeing.
+      </p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <button class="btn btn--primary" data-book id="mudras-book-btn" style="padding:.9rem 2.5rem;">
+          🪷 &nbsp;Book a Class
+        </button>
+        <a href="/classes" class="btn btn--outline" id="mudras-classes-btn">View All Classes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Responsive grid fix for mudra intro
+  function fixMudraGrid() {
+    const g = document.getElementById('mudra-intro-grid');
+    if (g) g.style.gridTemplateColumns = window.innerWidth < 768 ? '1fr' : '1fr 440px';
+  }
+  fixMudraGrid();
+  window.addEventListener('resize', fixMudraGrid);
+</script>
+{% endblock %}

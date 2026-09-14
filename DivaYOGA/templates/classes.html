@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Classes{% endblock %}
+{% block meta_desc %}Explore Diva Dynamic Yoga classes: Core Strength, Therapy Flow, Live Online, Mobility Booster, Gentle Flow and Breath & Calm — in Madambakkam and online.{% endblock %}
+
+{% block content %}
+
+<!-- ══ Page Hero ══════════════════════════════════════════════ -->
+<section class="page-hero" aria-label="Classes page hero">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="pill pill--sage" style="margin-bottom:1rem; background:rgba(255,255,255,.15); color:var(--sand-light); border:1px solid rgba(255,255,255,.2);">Programmes</div>
+    <h1>Classes &amp; Programmes</h1>
+    <p>Curated paths — from gentle foundations to targeted recovery courses. Choose what fits your goals.</p>
+  </div>
+</section>
+
+<!-- ══ Kids & Adult Programmes ═════════════════════════════════ -->
+<section class="section" id="signature">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sage">Our Programmes</div>
+      <h2>Kids &amp; Adult Sections</h2>
+      <p>Structured yoga pathways designed separately to meet the growth needs of children and the wellness goals of adults.</p>
+    </div>
+
+    <!-- Kids Section -->
+    <div id="kids-yoga" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-bottom:5rem;">
+      <div style="background:linear-gradient(135deg, #D9822B, #F5A623); border-radius:var(--radius-lg); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:8rem; box-shadow:var(--shadow-lg);" class="reveal">
+        🌟
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="pill pill--sand" style="margin-bottom:1rem; background:#D9822B; color:white;">Kids Section · Ages 5–15</div>
+        <h2>Kids Yoga</h2>
+        <div style="margin-top:.4rem; margin-bottom:.8rem;">
+          <span class="time-badge" style="background:rgba(217,130,43,.12); color:#B86114; font-weight:600;">
+            🕒 Saturday &amp; Sunday: 05:00 – 06:00 PM
+          </span>
+        </div>
+        <div class="divider"></div>
+        <p style="margin-top:1rem; font-size:1rem; line-height:1.8; margin-bottom:1.5rem;">
+          Fun, interactive, and disciplined yoga sessions designed specifically for growing children.
+          Enhances memory power, focus, spinal posture, body flexibility, and emotional calmness through mindful play and breathing.
+        </p>
+        <ul class="benefit-list">
+          <li>Improves concentration, memory &amp; academic focus</li>
+          <li>Corrects spinal posture &amp; enhances flexibility</li>
+          <li>Calms exam stress &amp; supports emotional regulation</li>
+          <li>Builds healthy daily habits and physical confidence</li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <button class="btn btn--primary" data-book id="book-kids-btn">Book Kids Trial →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adult Section -->
+    <div id="adult-yoga" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-bottom:5rem; direction:rtl;">
+      <div style="background:linear-gradient(135deg, #3D6358, #5B8A7A); border-radius:var(--radius-lg); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:8rem; box-shadow:var(--shadow-lg);" class="reveal">
+        🧘
+      </div>
+      <div class="reveal reveal-delay-1" style="direction:ltr;">
+        <div class="pill pill--sage" style="margin-bottom:1rem;">Adult Section · All Levels</div>
+        <h2>Adult Yoga</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.4rem; margin-bottom:.8rem;">
+          <span class="time-badge" style="font-weight:600;">
+            🌅 Mon &amp; Wed: 05:30 – 06:30 AM
+          </span>
+          <span class="time-badge evening" style="font-weight:600;">
+            🌙 Sat &amp; Sun: 06:00 – 07:00 PM
+          </span>
+        </div>
+        <div class="divider"></div>
+        <p style="margin-top:1rem; font-size:1rem; line-height:1.8; margin-bottom:1.5rem;">
+          Comprehensive yoga for adults combining core conditioning, mobility routines, back pain relief,
+          and restorative sequences. Customised to individual body types and modern working lifestyles.
+        </p>
+        <ul class="benefit-list">
+          <li>Core conditioning and spinal stability</li>
+          <li>Relief for back pain, neck tension &amp; joint stiffness</li>
+          <li>Stress reduction, breath regulation &amp; mental clarity</li>
+          <li>Body-type specific adjustments (Vatha / Pitha / Kapha)</li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <button class="btn btn--primary" data-book id="book-adult-btn">Book Adult Trial →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Online Live -->
+    <div id="online-live" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-bottom:2rem;">
+      <div style="background:linear-gradient(135deg, #5B6F8A, #7AA8C9); border-radius:var(--radius-lg); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:8rem; box-shadow:var(--shadow-lg);" class="reveal">
+        📡
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="pill pill--sage" style="margin-bottom:1rem; background:rgba(91,111,138,.12); color:#2A3D5B;">Online · Kids &amp; Adults</div>
+        <h2>Live Online</h2>
+        <div class="divider"></div>
+        <p style="margin-top:1rem; font-size:1rem; line-height:1.8; margin-bottom:1.5rem;">
+          Interactive remote classes with real-time guidance, recording access, and direct trainer feedback.
+          Perfect for anyone who prefers the flexibility of practising from home without losing quality instruction.
+        </p>
+        <ul class="benefit-list">
+          <li>Flexible access from home for kids &amp; adults</li>
+          <li>Session recordings for repeat practice</li>
+          <li>Trainer feedback and personalized posture cues</li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <button class="btn btn--primary" data-book id="book-online-btn">Book Online Class →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Short Modules ══════════════════════════════════════════ -->
+<section class="section section--alt" id="modules">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sand">Drop-ins &amp; Modules</div>
+      <h2>Short Modules &amp; Drop-ins</h2>
+      <p>Single class options for specific goals — mobility, sleep, office posture and breathwork.</p>
+    </div>
+
+    <div class="grid-3" style="gap:1.5rem;">
+
+      {% for cls in classes if cls.id in ['mobility-booster', 'gentle-flow', 'breath-calm'] %}
+      <div class="card reveal {% if loop.index > 1 %}reveal-delay-{{ loop.index - 1 }}{% endif %}" id="{{ cls.id }}">
+        <div style="font-size:2.5rem; margin-bottom:1rem;">{{ cls.icon }}</div>
+        <h3 class="card__title">{{ cls.title }}</h3>
+        <p class="card__text" style="margin-top:.4rem;">{{ cls.tagline }}</p>
+        <ul class="benefit-list">
+          {% for b in cls.benefits %}
+            <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+        <button class="btn btn--outline" data-book style="margin-top:1.5rem; width:100%; justify-content:center; font-size:.85rem;" id="book-{{ cls.id }}-btn">
+          Book Drop-in
+        </button>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Assessment CTA ═════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="pill pill--sand" style="margin-bottom:1.2rem;">Not sure where to start?</div>
+      <h2>Book a Short Assessment</h2>
+      <p>We'll recommend the best programme for your body, goals and schedule — completely free.</p>
+      <button class="btn btn--sand" data-book id="classes-cta-btn" style="font-size:1rem; padding:.9rem 2.5rem;">
+        🪷 &nbsp;Book Assessment
+      </button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+{% block meta_desc %}Contact Diva Dynamic Yoga — call, email or message on Instagram. Join WhatsApp groups for Adults or Students. Visit us in Madambakkam, Chennai.{% endblock %}
+
+{% block content %}
+
+<!-- ══ Page Hero ══════════════════════════════════════════════ -->
+<section class="page-hero" aria-label="Contact page hero">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="pill pill--sage" style="margin-bottom:1rem; background:rgba(255,255,255,.15); color:var(--sand-light); border:1px solid rgba(255,255,255,.2);">Reach Out</div>
+    <h1>Contact &amp; Book</h1>
+    <p>Reach out by phone, email or Instagram. We'll respond quickly to help you reserve a slot.</p>
+  </div>
+</section>
+
+<!-- ══ Contact Info + Form ════════════════════════════════════ -->
+<section class="section" id="contact-main">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Contact Details -->
+      <div>
+
+        <div class="pill pill--sage" style="margin-bottom:1.5rem;">Direct Contact</div>
+
+        <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+
+          <!-- Phone -->
+          <a href="tel:+917305382804" class="contact-item" id="contact-phone" aria-label="Call us">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 73053 82804</p>
+              <p style="font-size:.8rem; color:var(--sage); margin-top:.2rem;">Tap to call directly</p>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/diva_dynamic_yoga" target="_blank" rel="noopener"
+             class="contact-item" id="contact-instagram" aria-label="Visit us on Instagram">
+            <div class="contact-icon">📷</div>
+            <div>
+              <h4>Instagram</h4>
+              <p>@diva_dynamic_yoga</p>
+              <p style="font-size:.8rem; color:var(--sage); margin-top:.2rem;">DM us for slot availability</p>
+            </div>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:varsittha04@gmail.com" class="contact-item" id="contact-email" aria-label="Email us">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>varsittha04@gmail.com</p>
+              <p style="font-size:.8rem; color:var(--sage); margin-top:.2rem;">We reply within 24 hours</p>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- WhatsApp Groups -->
+        <div class="pill pill--sage" style="margin-bottom:1.2rem;">WhatsApp Groups</div>
+        <div style="display:flex; flex-direction:column; gap:.8rem; margin-bottom:2.5rem;">
+
+          <a href="https://wa.me/917305382804?text=Hi%2C+I%27d+like+to+join+the+Adults+group"
+             target="_blank" rel="noopener"
+             class="whatsapp-btn whatsapp-btn--adults" id="whatsapp-adults">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.43a.5.5 0 0 0 .609.609l5.585-1.471A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.5-5.19-1.373l-.372-.22-3.863 1.017 1.017-3.718-.24-.38A10 10 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            <div>
+              <div style="font-weight:600;">Adults Group</div>
+              <div style="font-size:.8rem; opacity:.8;">For working professionals &amp; seniors</div>
+            </div>
+            <span style="margin-left:auto; font-size:.8rem; opacity:.7;">Join →</span>
+          </a>
+
+          <a href="https://wa.me/917305382804?text=Hi%2C+I%27d+like+to+join+the+Students+group"
+             target="_blank" rel="noopener"
+             class="whatsapp-btn whatsapp-btn--students" id="whatsapp-students">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.43a.5.5 0 0 0 .609.609l5.585-1.471A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.5-5.19-1.373l-.372-.22-3.863 1.017 1.017-3.718-.24-.38A10 10 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            <div>
+              <div style="font-weight:600;">Students Group</div>
+              <div style="font-size:.8rem; opacity:.8;">For school &amp; college students</div>
+            </div>
+            <span style="margin-left:auto; font-size:.8rem; opacity:.7;">Join →</span>
+          </a>
+
+        </div>
+
+        <!-- Studio Address -->
+        <div class="pill pill--sage" style="margin-bottom:1.2rem;">Visit the Studio</div>
+        <div style="background:var(--white); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow-sm); border:1px solid rgba(91,138,122,.08);">
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <span style="font-size:1.5rem; flex-shrink:0; margin-top:.1rem;">📍</span>
+            <div>
+              <p style="color:var(--forest); font-weight:500; margin-bottom:.3rem;">19A, Dwarakapuri 2nd Street</p>
+              <p>Madambakkam, Chennai – 600 126</p>
+              <p style="margin-top:.5rem; font-size:.82rem; color:var(--sage);">Morning &amp; Evening sessions available</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Booking Form -->
+      <div class="reveal reveal-delay-1">
+        <div class="booking-form">
+          <div class="pill pill--sage" style="margin-bottom:1.2rem;">🪷 Reserve a Free Trial</div>
+          <h3 style="margin-bottom:.5rem;">Book Your Spot</h3>
+          <p style="margin-bottom:1.8rem; font-size:.9rem;">Fill in the form — Divya will reach out within 24 hours to confirm your slot and answer any questions.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="cName">Full Name *</label>
+              <input type="text" id="cName" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="cPhone">Phone Number *</label>
+              <input type="tel" id="cPhone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+            <div class="form-group">
+              <label for="cEmail">Email Address</label>
+              <input type="email" id="cEmail" name="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="cClass">Class Interest</label>
+              <select id="cClass" name="class_interest">
+                <option value="">Select a class…</option>
+                <option>Core Strength</option>
+                <option>Therapy Flow</option>
+                <option>Live Online</option>
+                <option>Mobility Booster</option>
+                <option>Gentle & Open Flow</option>
+                <option>Breath & Calm</option>
+                <option>Not sure — need guidance</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cMessage">Goals or Health Notes</label>
+              <textarea id="cMessage" name="message" rows="3" placeholder="e.g. back pain, posture correction, stress management…"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; font-size:1rem; padding:.85rem;" id="contact-submit-btn">
+              Send Booking Request →
+            </button>
+          </form>
+
+          <p style="font-size:.78rem; color:var(--text-muted); text-align:center; margin-top:1rem;">
+            Or call us directly at <a href="tel:+917305382804" style="color:var(--sage); font-weight:600;">+91 73053 82804</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ Map ════════════════════════════════════════════════════ -->
+<section style="padding:0 0 80px;" id="map-section">
+  <div class="container">
+    <div style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); height:400px;" class="reveal">
+      <iframe
+        title="Diva Dynamic Yoga Studio — Madambakkam, Chennai"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890!2d80.13!3d12.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMadambakkam%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1"
+        width="100%" height="100%"
+        style="border:none;" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Quick Actions ══════════════════════════════════════════ -->
+<section class="section section--forest" style="padding:48px 0;" id="quick-actions">
+  <div class="container" style="text-align:center;">
+    <p style="color:rgba(237,231,220,.7); margin-bottom:1.5rem; font-size:.95rem;">
+      Quick Actions — Call or open Instagram to check slot availability. We'll confirm immediately.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="tel:+917305382804" class="btn btn--sand" id="quick-call-btn" style="padding:.75rem 2rem;">
+        📞 &nbsp;Call Now
+      </a>
+      <a href="https://instagram.com/diva_dynamic_yoga" target="_blank" rel="noopener"
+         class="btn btn--ghost" id="quick-instagram-btn" style="padding:.75rem 2rem;">
+        📷 &nbsp;@diva_dynamic_yoga
+      </a>
+      <a href="mailto:varsittha04@gmail.com" class="btn btn--ghost" id="quick-email-btn" style="padding:.75rem 2rem;">
+        ✉️ &nbsp;Email Us
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

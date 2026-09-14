@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Teachers{% endblock %}
+{% block meta_desc %}Meet Divya Varsittha D.R. — BSS Certified Trainer and Internationally Registered Yoga Teacher at Diva Dynamic Yoga, Madambakkam Chennai.{% endblock %}
+
+{% block content %}
+
+<!-- ══ Page Hero ══════════════════════════════════════════════ -->
+<section class="page-hero" aria-label="Teachers page hero">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="pill pill--sage" style="margin-bottom:1rem; background:rgba(255,255,255,.15); color:var(--sand-light); border:1px solid rgba(255,255,255,.2);">Our Trainer</div>
+    <h1>Meet Our Trainer</h1>
+    <p>Experienced, certified and patient — focused on safe progression and clear guidance for every student.</p>
+  </div>
+</section>
+
+<!-- ══ Trainer Profile ════════════════════════════════════════ -->
+<section class="section" id="trainer-profile">
+  <div class="container">
+
+    <div style="max-width:900px; margin-inline:auto;">
+
+      <!-- Card -->
+      <div style="background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid rgba(91,138,122,.1);" class="reveal">
+
+        <!-- Top gradient bar -->
+        <div style="height:6px; background:linear-gradient(90deg, var(--sage), var(--sand), var(--rose));"></div>
+
+        <div style="padding:3rem; display:grid; grid-template-columns:280px 1fr; gap:3rem; align-items:start;">
+
+          <!-- Photo -->
+          <div style="position:relative;">
+            <img src="{{ url_for('static', filename='images/divya_trainer.png') }}"
+                 alt="Divya Varsittha D.R."
+                 style="width:100%; border-radius:var(--radius-md); aspect-ratio:3/4; object-fit:cover; box-shadow:var(--shadow-md);"
+                 loading="lazy" />
+
+            <!-- Overlay badge -->
+            <div style="position:absolute; bottom:1rem; left:50%; transform:translateX(-50%); background:rgba(44,62,53,.88); backdrop-filter:blur(8px); border-radius:var(--radius-sm); padding:.6rem 1rem; text-align:center; white-space:nowrap;">
+              <div style="font-size:.75rem; color:var(--sand-light); font-weight:600; letter-spacing:.06em; text-transform:uppercase;">Lead Trainer</div>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div>
+            <div class="pill pill--sage" style="margin-bottom:1rem;">Founder &amp; Head Instructor</div>
+            <h2 style="font-size:2.2rem; margin-bottom:.3rem;">Divya Varsittha</h2>
+            <p style="font-size:1rem; color:var(--text-muted); margin-bottom:1.2rem;">D. R.</p>
+
+            <div class="divider"></div>
+
+            <p style="margin-top:1.2rem; font-size:.97rem; line-height:1.85; margin-bottom:1.5rem;">
+              At Diva Dynamic Yoga, we are dedicated to creating a sanctuary for holistic wellness where ancient wisdom
+              meets modern practice, offering a diverse range of yoga sessions tailored to meet the unique needs of every individual.
+            </p>
+
+            <p style="font-size:.93rem; color:var(--text-muted); line-height:1.8; margin-bottom:2rem;">
+              Our sessions are designed to cultivate physical strength, inner peace, and healthy lifestyle habits in a warm,
+              supportive environment suitable for practitioners of all ages and levels.
+            </p>
+
+            <!-- Certifications -->
+            <h4 style="font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage-dark); margin-bottom:1rem;">Certifications</h4>
+            <div class="cert-badges">
+              <span class="cert-badge" style="font-size:.85rem;">🏅 BSS Certified Trainer</span>
+              <span class="cert-badge" style="font-size:.85rem;">🌐 Registered Yoga Teacher</span>
+              <span class="cert-badge" style="font-size:.85rem;">🕉️ International Yogalimbic Committee</span>
+            </div>
+
+            <!-- Specialisations -->
+            <h4 style="font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage-dark); margin-top:1.8rem; margin-bottom:1rem;">Specialisations</h4>
+            <div style="display:flex; flex-wrap:wrap; gap:.6rem;">
+              {% set specs = ['Posture Alignment', 'Mobility Programming', 'Body-Type Adjustments', 'Core Conditioning', 'Breath & Pranayama', 'Vatha / Pitha / Kapha Yoga', 'Mudra Therapy'] %}
+              {% for spec in specs %}
+              <span style="background:rgba(91,138,122,.08); border:1px solid rgba(91,138,122,.15); border-radius:100px; padding:.3rem .9rem; font-size:.8rem; color:var(--text);">
+                {{ spec }}
+              </span>
+              {% endfor %}
+            </div>
+
+            <!-- CTA -->
+            <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <button class="btn btn--primary" data-book id="teachers-book-btn">Book a Session →</button>
+              <a href="/contact" class="btn btn--outline" id="teachers-contact-btn">Get in Touch</a>
+              <a href="/classes" class="btn btn--outline" id="teachers-classes-btn" style="color:var(--sand); border-color:var(--sand);">View Classes</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ Teaching Philosophy ════════════════════════════════════ -->
+<section class="section section--alt" id="philosophy">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sand">Teaching Philosophy</div>
+      <h2>Guided by These Principles</h2>
+    </div>
+
+    <div class="grid-3" style="gap:1.5rem;">
+
+      <div class="card reveal" style="border-top:3px solid var(--sage);">
+        <div style="font-size:2rem; margin-bottom:1rem;">🛡️</div>
+        <h3 class="card__title">Safety Always First</h3>
+        <p class="card__text" style="margin-top:.5rem;">Every modification, every adjustment and every cue is filtered through the lens of student safety and gradual, sustainable progression.</p>
+      </div>
+
+      <div class="card reveal reveal-delay-1" style="border-top:3px solid var(--sand);">
+        <div style="font-size:2rem; margin-bottom:1rem;">📐</div>
+        <h3 class="card__title">Precision Over Speed</h3>
+        <p class="card__text" style="margin-top:.5rem;">Correct alignment and mindful movement always take priority over the number of repetitions or the pace of the class.</p>
+      </div>
+
+      <div class="card reveal reveal-delay-2" style="border-top:3px solid var(--rose);">
+        <div style="font-size:2rem; margin-bottom:1rem;">📈</div>
+        <h3 class="card__title">Measurable Progress</h3>
+        <p class="card__text" style="margin-top:.5rem;">Clear milestones and weekly check-ins ensure students always know they are moving forward — building confidence along with strength.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════════════ -->
+<section class="section section--forest" id="teachers-cta">
+  <div class="container" style="text-align:center;">
+    <div class="lotus-ornament" style="top:10%; right:5%;">🪷</div>
+    <h2 style="margin-bottom:1rem;">Ready to Train with Divya?</h2>
+    <p style="margin-bottom:2rem; color:rgba(237,231,220,.75); max-width:480px; margin-inline:auto; margin-bottom:2rem;">
+      Book your free trial session. Divya will assess your needs and create a personalised plan just for you.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <button class="btn btn--sand" data-book id="teachers-cta-book-btn" style="font-size:1rem; padding:.9rem 2.5rem;">
+        🪷 &nbsp;Book Free Trial
+      </button>
+      <a href="/schedule" class="btn btn--ghost" id="teachers-schedule-btn" style="padding:.9rem 2rem;">
+        View Schedule
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Fix grid layout on small screens for trainer card
+  function fixTrainerGrid() {
+    const tc = document.querySelector('#trainer-profile [style*="grid-template-columns:280px"]');
+    if (tc && window.innerWidth < 640) {
+      tc.style.gridTemplateColumns = '1fr';
+    } else if (tc) {
+      tc.style.gridTemplateColumns = '280px 1fr';
+    }
+  }
+  fixTrainerGrid();
+  window.addEventListener('resize', fixTrainerGrid);
+</script>
+{% endblock %}

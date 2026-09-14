@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+{% block title %}Schedule{% endblock %}
+{% block meta_desc %}Diva Dynamic Yoga weekly class schedule — morning and evening batches in Madambakkam, Chennai. Limited spots, book early.{% endblock %}
+
+{% block content %}
+
+<!-- ══ Page Hero ══════════════════════════════════════════════ -->
+<section class="page-hero" aria-label="Schedule page hero">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="pill pill--sage" style="margin-bottom:1rem; background:rgba(255,255,255,.15); color:var(--sand-light); border:1px solid rgba(255,255,255,.2);">Timetable</div>
+    <h1>Weekly Schedule</h1>
+    <p>Limited batches · Focused training · Personal care. Choose a day that fits your routine.</p>
+  </div>
+</section>
+
+<!-- ══ Schedule Table ══════════════════════════════════════════ -->
+<section class="section" id="timetable">
+  <div class="container">
+
+    <div class="section-header reveal" style="margin-bottom:2.5rem;">
+      <div class="pill pill--sage">Live Sessions</div>
+      <h2>Class Timetable</h2>
+      <p>Evening batch is high-demand — booking early guarantees your spot.</p>
+    </div>
+
+    <!-- Alert banner -->
+    <div style="background:linear-gradient(135deg, rgba(201,168,130,.15), rgba(201,168,130,.08)); border:1px solid rgba(201,168,130,.3); border-radius:var(--radius-md); padding:1rem 1.5rem; display:flex; align-items:center; gap:.8rem; margin-bottom:2rem;" class="reveal">
+      <span style="font-size:1.3rem;">⚡</span>
+      <p style="margin:0; font-size:.9rem; color:#7A5A2A; font-weight:500;">Evening batches fill up fast — reserve your spot at least 3 days in advance.</p>
+      <button class="btn btn--sand" data-book id="schedule-book-alert-btn" style="margin-left:auto; padding:.5rem 1.2rem; font-size:.82rem; flex-shrink:0;">Book Now</button>
+    </div>
+
+    <div class="schedule-table-wrap reveal">
+      <table class="schedule-table" aria-label="Weekly class schedule">
+        <thead>
+          <tr>
+            <th scope="col" style="width:25%;">Day</th>
+            <th scope="col">🌅 Morning Session</th>
+            <th scope="col">🌆 Evening Sessions (Kids &amp; Adults)</th>
+            <th scope="col" style="width:160px;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in schedule %}
+          <tr>
+            <td>
+              <div class="day-label">{{ item.day }}</div>
+            </td>
+            <td>
+              {% if item.morning %}
+              <div class="time-badge">☀️ &nbsp;{{ item.morning }}</div>
+              {% else %}
+              <span style="color:var(--text-muted); font-size:.85rem;">—</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if item.kids or item.adults %}
+              <div style="display:flex; flex-direction:column; gap:.45rem;">
+                {% if item.kids %}
+                <div class="time-badge" style="background:rgba(217,130,43,.14); color:#B86114;">
+                  🌟 &nbsp;<strong>Kids:</strong>&nbsp; {{ item.kids }}
+                </div>
+                {% endif %}
+                {% if item.adults %}
+                <div class="time-badge evening">
+                  🧘 &nbsp;<strong>Adults:</strong>&nbsp; {{ item.adults }}
+                </div>
+                {% endif %}
+              </div>
+              {% elif item.evening %}
+              <div class="time-badge evening">🌙 &nbsp;{{ item.evening }}</div>
+              {% else %}
+              <span style="color:var(--text-muted); font-size:.85rem;">—</span>
+              {% endif %}
+            </td>
+            <td>
+              <button class="btn btn--outline" data-book id="book-{{ item.day|lower }}-btn"
+                      style="padding:.45rem 1.1rem; font-size:.82rem;">
+                Reserve
+              </button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Notes -->
+    <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:1.5rem;" class="reveal">
+      <div style="display:flex; align-items:center; gap:.5rem; font-size:.84rem; color:var(--text-muted);">
+        <span style="width:10px; height:10px; border-radius:50%; background:var(--sage); flex-shrink:0;"></span>
+        Morning sessions: 05:30 – 06:30 AM (Monday &amp; Wednesday)
+      </div>
+      <div style="display:flex; align-items:center; gap:.5rem; font-size:.84rem; color:var(--text-muted);">
+        <span style="width:10px; height:10px; border-radius:50%; background:#D9822B; flex-shrink:0;"></span>
+        Kids Weekend batches: 05:00 – 06:00 PM (Saturday &amp; Sunday)
+      </div>
+      <div style="display:flex; align-items:center; gap:.5rem; font-size:.84rem; color:var(--text-muted);">
+        <span style="width:10px; height:10px; border-radius:50%; background:var(--sand); flex-shrink:0;"></span>
+        Adult Weekend batches: 06:00 – 07:00 PM (Saturday &amp; Sunday)
+      </div>
+      <div style="display:flex; align-items:center; gap:.5rem; font-size:.84rem; color:var(--text-muted);">
+        <span style="width:10px; height:10px; border-radius:50%; background:var(--rose); flex-shrink:0;"></span>
+        Online sessions available on request
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Benefits Grid ══════════════════════════════════════════ -->
+<section class="section section--alt" id="benefits">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="pill pill--sand">Why Practice With Us</div>
+      <h2>Benefits of Our Yoga Sessions</h2>
+    </div>
+
+    <div class="grid-3" style="gap:1.5rem;">
+
+      <div class="card reveal" id="benefit-general">
+        <div class="card__icon">🧘</div>
+        <h3 class="card__title">General Yoga</h3>
+        <ul class="benefit-list">
+          <li>Improves flexibility &amp; energy levels</li>
+          <li>Enhances breathing and posture</li>
+          <li>Reduces stress and increases calmness</li>
+        </ul>
+      </div>
+
+      <div class="card reveal reveal-delay-1" id="benefit-core">
+        <div class="card__icon">🔥</div>
+        <h3 class="card__title">Core Strength</h3>
+        <ul class="benefit-list">
+          <li>Strengthens deep core muscles</li>
+          <li>Supports spine and posture correction</li>
+          <li>Improves daily body stability</li>
+        </ul>
+      </div>
+
+      <div class="card reveal reveal-delay-2" id="benefit-therapy">
+        <div class="card__icon">🌿</div>
+        <h3 class="card__title">Therapy Flow</h3>
+        <ul class="benefit-list">
+          <li>Back &amp; neck pain relief</li>
+          <li>Gentle mobility-based routines</li>
+          <li>Ideal for beginners &amp; seniors</li>
+        </ul>
+      </div>
+
+      <div class="card reveal" id="benefit-mobility">
+        <div class="card__icon">⚡</div>
+        <h3 class="card__title">Mobility Yoga</h3>
+        <ul class="benefit-list">
+          <li>Increases movement range</li>
+          <li>Reduces body stiffness</li>
+          <li>Great for desk workers &amp; athletes</li>
+        </ul>
+      </div>
+
+      <div class="card reveal reveal-delay-1" id="benefit-online">
+        <div class="card__icon">📡</div>
+        <h3 class="card__title">Live Online</h3>
+        <ul class="benefit-list">
+          <li>Join anywhere with ease</li>
+          <li>Includes class recordings</li>
+          <li>Trainer feedback &amp; corrections</li>
+        </ul>
+      </div>
+
+      <div class="card reveal reveal-delay-2" id="benefit-gentle">
+        <div class="card__icon">🌸</div>
+        <h3 class="card__title">Gentle / Open Flow</h3>
+        <ul class="benefit-list">
+          <li>Beginner-friendly sessions</li>
+          <li>Encourages mindful breathing</li>
+          <li>Improves sleep &amp; relaxation</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Location + CTA ══════════════════════════════════════════ -->
+<section class="section" id="location">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem; align-items:center;">
+
+      <div class="reveal">
+        <div class="pill pill--sage" style="margin-bottom:1rem;">Studio Location</div>
+        <h2>Visit Us in Madambakkam</h2>
+        <div class="divider"></div>
+        <p style="margin-top:1rem; font-size:1rem; line-height:1.8;">
+          19A, Dwarakapuri 2nd Street,<br>
+          Madambakkam, Chennai – 600 126
+        </p>
+        <p style="margin-top:.8rem; font-size:.9rem; color:var(--text-muted);">
+          Morning &amp; Evening sessions available. Online classes accessible from anywhere.
+        </p>
+        <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <button class="btn btn--primary" data-book id="schedule-final-book-btn">Book a Slot →</button>
+          <a href="/contact" class="btn btn--outline" id="schedule-contact-btn">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Map embed -->
+      <div class="reveal reveal-delay-1" style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); height:360px;">
+        <iframe
+          title="Diva Dynamic Yoga Studio location on Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.9!2d80.1!3d12.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMadambakkam%2C+Chennai!5e0!3m2!1sen!2sin!4v1"
+          width="100%" height="100%"
+          style="border:none;" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
